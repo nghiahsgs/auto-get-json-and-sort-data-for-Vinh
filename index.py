@@ -2,7 +2,8 @@ import json
 import io
 
 def read_file(file_name):
-    f = io.open(file_name, 'r', encoding='utf-8')
+    # f = io.open(file_name, 'r', encoding='utf-8')
+    f = io.open(file_name, 'r')
     ndung=f.read()
     f.close()
     return ndung
@@ -13,10 +14,11 @@ def write_file(file_name,ndung):
     f.close()
 
 
-data = json.loads(read_file('data.json'))
-data = data['data']
+data = read_file('keyword_planidea_amz.json')
+# data = json.loads(read_file('keyword_planidea_amz.json'))
+# data = data['data']
 
-data = sorted(data,key = lambda x:-x['age'])
+# data = sorted(data,key = lambda x:-x['age'])
 
 
 
@@ -38,3 +40,10 @@ data = sorted(data,key = lambda x:-x['age'])
 #     ]
 # }
 # write_file("data.json",json.dumps(data))
+
+
+
+# L_keywordPlanner = []
+# for e in L_data:
+#     L_keywordPlanner+=e['KeywordsPlanner']
+

@@ -1,1 +1,16 @@
-{"data": [{"name": "nghiahsgs", "age": 10}, {"name": "nghiahsgs", "age": 20}, {"name": "nghiahsgs", "age": 11}]}
+{
+    "data": [
+        {
+            "name": "nghiahsgs",
+            "age": 10
+        },
+        {
+            "name": "nghiahsgs",
+            "age": 20
+        },
+        {
+            "name": "nghiahsgs",
+            "age": 11
+        }
+    ]
+}
