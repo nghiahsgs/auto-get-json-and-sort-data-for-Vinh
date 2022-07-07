@@ -9,6 +9,7 @@ def write_file(file_name,ndung):
 
 
 def chunked_file_reader(fp, block_size = 1024 * 1024*1024*2):
+# def chunked_file_reader(fp, block_size = 1024 * 1024):
     for chunk in iter(partial(fp.read, block_size), ''):
         yield chunk
 
@@ -22,6 +23,7 @@ def read_file(file_path):
             print(count)
             # print(chunk)
             data+=chunk
+            del(chunk)
     # return count
     return data
 
