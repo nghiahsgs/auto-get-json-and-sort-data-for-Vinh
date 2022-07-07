@@ -25,19 +25,21 @@ def read_file(file_path):
     # return count
     return data
 
-# data = read_file('keyword_planidea_law.json')
-data = read_file('keyword_planidea_amz.json')
+data = read_file('keyword_planidea_law.json')
+# data = read_file('keyword_planidea_amz.json')
 
 import json
 L_data = json.loads(data)
 L_keywordPlanner = []
 for e in L_data:
-    L_keywordPlanner+=e['KeywordsPlanner']
+    e['Parent_Text']
+    # L_keywordPlanner+=e['KeywordsPlanner']
 
-L_keywordPlanner = list(map(lambda x:{
-    "Text": x['Text'],
-    "AvgMonthlySearches": x['AvgMonthlySearches'],
-},L_keywordPlanner))
+    L_keywordPlanner += list(map(lambda x:{
+        "Parent_Text": e['Parent_Text'],
+        "Text": x['Text'],
+        "AvgMonthlySearches": x['AvgMonthlySearches'],
+    },e['KeywordsPlanner']))
 
 
 
@@ -46,8 +48,9 @@ L_keywordPlanner = sorted(L_keywordPlanner,key = lambda x:x['AvgMonthlySearches'
 L_keywordPlanner = [
     {
         "Text":e["Text"],
+        "Parent_Text":e["Parent_Text"],
         "AvgMonthlySearches":e["AvgMonthlySearches"],
-        "_id":index+9801
+        "id":index+9801
     }
     for (index,e) in enumerate(L_keywordPlanner)
 ]
